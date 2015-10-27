@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ZH_CN">
+<head>
+	<meta charset="UTF-8">
+	<title>todo笔记</title>
+	<link rel="stylesheet" type="text/css" href="css/todo.css">
+
+</head>
+<body>
+	<div id="todoApp">
+		<header>
+			<h1>Todos</h1>
+			<input type="text" id="newTodo" placeHolder="添加你的新事件">
+		</header>
+
+		<section>
+			<input type="checkbox" id="toggleAll" /><label for="toggleAll">完成所有清单</label>
+			<ul>
+				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
+				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
+				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
+				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
+				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
+				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
+				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
+				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
+				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
+				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
+			</ul>
+		</section>
+
+		<footer>
+			<a href="#" id="clear-completed">删除所有</a>
+			<div class="todoCount">
+				剩余<b>3</b> 个待办清单
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

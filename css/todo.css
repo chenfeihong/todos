@@ -1,0 +1,59 @@
+body {
+	width: 520px;
+	background: #eee;
+	margin: 0 auto;
+}
+
+#todoApp {
+	padding: 26px;
+	padding-bottom: 0;
+	margin-bottom: 10px;
+	background: #fff;
+	border-radius: 0 0 15px 15px;
+}
+
+#todoApp h1 {
+	text-align: center;
+}
+#todoApp input[type=text] {
+	width: 444px;
+	line-height: 1.4em;
+	font-size: 24px;
+	padding: 5px 10px;
+}
+
+#todoApp ul {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0;
+}
+
+#todoApp ul li {
+	font-size: 24px;
+	line-height: 2.6em;
+	border-bottom: solid 1px #ccc;
+
+}
+
+footer {
+	background: #f4fce8;
+	overflow: hidden;
+	line-height: 46px;
+	margin-left: -26px;
+	margin-right: -26px;
+	padding: 0 26px;
+	color: #555;
+	border-top: solid 1px #ededed;
+	border-radius: 0 0 15px 15px;
+}
+
+#clear-completed {
+	float: right;
+	text-decoration: none;
+	background: rgba(0,0,0,0.1);
+	border-radius: 12px;
+	padding: 0 18px 0;
+	color: #555;
+	margin: 9px 0;
+	line-height: 28px;
+}
