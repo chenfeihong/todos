@@ -2,6 +2,7 @@ body {
 	width: 520px;
 	background: #eee;
 	margin: 0 auto;
+	font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #todoApp {
@@ -32,7 +33,7 @@ body {
 	font-size: 24px;
 	line-height: 2.6em;
 	border-bottom: solid 1px #ccc;
-
+	position: relative;
 }
 
 footer {
@@ -56,4 +57,32 @@ footer {
 	color: #555;
 	margin: 9px 0;
 	line-height: 28px;
+}
+
+#clear-completed:hover {
+	background: rgba(0,0,0, 0.2);
+}
+/*对应按下去的效果*/
+#clear-completed:active {
+	position: relative;
+	top: 2px;
+}
+
+.todo-item label {
+	margin-left: 10px;
+}
+
+.destroy {
+	position: absolute;
+	display: block;
+	right: 5px;
+	top: 20px;
+	width: 20px;
+	background: url(../images/destroy.png) no-repeat 0 0;
+	height: 20px;
+}
+
+.destroy:hover {
+	background: url(../images/destroy.png) no-repeat 0 -20px;
+	cursor: pointer;
 }
