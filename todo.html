@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<title>todo笔记</title>
 	<link rel="stylesheet" type="text/css" href="css/todo.css">
-
 </head>
 <body>
+
 	<div id="todoApp">
 		<header>
 			<h1>Todos</h1>
@@ -16,10 +16,10 @@
 		<section>
 			<input type="checkbox" id="toggleAll" /><label for="toggleAll">完成所有清单</label>
 			<ul id="todoList">
+				<!-- <li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
 				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
 				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
-				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
-				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
+				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li> -->
 				
 			</ul>
 		</section>
@@ -36,5 +36,11 @@
 	<script type="text/javascript" src="libs/backbone-min.js"></script>
 	<script type="text/javascript" src="libs/backbone.localStorage.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+
+	<!-- template  -->
+	<script type="text/template" id="item-template">
+		<input type="checkbox" class="toggleCheckbox" <%= done? 'checked="checked"' : ''%> />
+		<label><%-title%></label><a class="destroy"></a>
+	</script>
 </body>
 </html>

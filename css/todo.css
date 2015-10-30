@@ -36,6 +36,11 @@ body {
 	position: relative;
 }
 
+#todoList .done label {
+	text-decoration: line-through;
+	color: #777;
+}
+
 footer {
 	background: #f4fce8;
 	overflow: hidden;
