@@ -25,10 +25,10 @@
 		</section>
 
 		<footer>
-			<a href="#" id="clear-completed">删除所有</a>
+			<!-- <a href="#" id="clear-completed">删除所有</a>
 			<div class="todoCount">
 				剩余<b>3</b> 个待办清单
-			</div>
+			</div> -->
 		</footer>
 	</div>
 	<script type="text/javascript" src="libs/jquery-1.7.2.js"></script>
@@ -41,6 +41,13 @@
 	<script type="text/template" id="item-template">
 		<input type="checkbox" class="toggleCheckbox" <%= done? 'checked="checked"' : ''%> />
 		<label><%-title%></label><a class="destroy"></a>
+	</script>
+
+	<script type="text/template" id="statsTemplate">
+		<a href="#" id="clear-completed">删除勾选的<b><%=done%></b>个待办清单</a>
+		<div class="todoCount">
+			剩余<b><%=remaining%></b> 个待办清单
+		</div>
 	</script>
 </body>
 </html>
