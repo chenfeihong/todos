@@ -14,7 +14,6 @@ $(document).ready(function($) {
 
 			myTodoList.fetch();//触发myTodoList的add事件，  这个地方灰常难以理解
 			this.render();
-
 		},
 		render: function () {
 			var done = myTodoList.done().length;
@@ -22,11 +21,16 @@ $(document).ready(function($) {
 			// alert(done.length + ', ' + remaining.length);
 			var htmlText = this.statsTemplate({done:done, remaining: remaining});
 			$('footer').html(htmlText);
+
+			$('#main').show();
+			myTodoList.length ==0 && $('#main').hide();//这样写屌不屌？？
+
+			$('#toggleAll')[0].checked = !remaining;//全选按钮render
 		},
 		events: {//注意， 这里的events的this指针都不是dom本身了 ，而是这个View本身
 			'keypress #newTodo': 'createOnEnter',
-			'click #toggleAll': 'toggleAll'
-			//'click #clear-completed', 'clearCompleted'
+			'click #toggleAll': 'toggleAll',
+			'click #clear-completed': 'clearCompleted'
 		},
 		clearCompleted: function  () {
 			_.invoke(myTodoList.done(), 'destroy');
@@ -62,7 +66,7 @@ $(document).ready(function($) {
 			var done = this.toggleAll[0].checked;
 			myTodoList.each(function (todo) {
 				todo.save({done: done});
-			})
+			});
 		}
 	});
 
@@ -80,6 +84,15 @@ $(document).ready(function($) {
 			this.$el.html(this.template(this.model.toJSON()) );
 			//给该li加上一个class 为done
 			this.$el.toggleClass('done', this.model.get('done'));//是否加上done， 那得看done属性是否为true
+
+			$('input[type=checkbox]').m139Check({  
+                lblOtherClass : 'c-pointer',
+                lblStyle : 'position:absolute;',
+                initCallback : function($this){
+                    
+                }
+            });
+
 			return this;//为什么return this， 链式调用啊
 		},
 		events: {
@@ -90,7 +103,7 @@ $(document).ready(function($) {
 			this.model.toggle();
 		},
 		clear: function (e) {//清除一个事件的model的数据
-			this.model.destroy();
+			this.model.destroy();//destroy 将触发Collection的remove事件
 		}
 	});
 
