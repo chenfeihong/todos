@@ -5,12 +5,37 @@ body {
 	font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+header {
+	margin-bottom: 5px;
+}
+
+#main {
+	position: relative;
+}
+
+#main >label {
+	top: 0;
+	left: 1px;
+}
+
 #todoApp {
 	padding: 26px;
 	padding-bottom: 0;
 	margin-bottom: 10px;
 	background: #fff;
 	border-radius: 0 0 15px 15px;
+}
+
+.editing > div {
+	display:none;
+}
+
+.textEdit {
+	display:none;
+}
+
+.editing > .textEdit {
+	display:block;
 }
 
 #todoApp h1 {
@@ -97,6 +122,17 @@ footer {
 }
 
 /*checkbox*/
+
+.chk-m139check {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    filter: alpha(opacity=0);/*for IE*/
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}
+
 .i-chooseMo, .i-chooseYet {
 	display: inline-block;
     background: url(../images/global_v3_24.png) no-repeat 0 0;
@@ -122,5 +158,7 @@ footer {
 
 .c-pointer {
     cursor: pointer;
+    top: 22px;
+    left: -8px;
 }
 

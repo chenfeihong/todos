@@ -14,7 +14,7 @@
 		</header>
 
 		<section id="main">
-			<input type="checkbox" id="toggleAll" /><label for="toggleAll">完成所有清单</label>
+			<input type="checkbox" id="toggleAll" /><label for="toggleAll" style="margin-left: 13px;">完成所有清单</label>
 			<ul id="todoList">
 				<!-- <li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
 				<li class="todo-item"><input type="checkbox" class="toggleCheckbox" /><label>这里是清单1</label><a class="destroy"></a></li>
@@ -41,8 +41,11 @@
 
 	<!-- template  -->
 	<script type="text/template" id="item-template">
+	<div>
 		<input type="checkbox" class="toggleCheckbox" <%= done? 'checked="checked"' : ''%> />
-		<label><%-title%></label><a class="destroy"></a>
+		<label class="todoText"><%-title%></label><a class="destroy"></a>
+	</div>
+	<input class="textEdit" type="text" value="" />
 	</script>
 
 	<script type="text/template" id="statsTemplate">

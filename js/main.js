@@ -26,6 +26,14 @@ $(document).ready(function($) {
 			myTodoList.length ==0 && $('#main').hide();//这样写屌不屌？？
 
 			$('#toggleAll')[0].checked = !remaining;//全选按钮render
+			
+			$('input[type=checkbox]').m139Check({  
+                lblOtherClass : 'c-pointer',
+                lblStyle : 'position:absolute;',
+                initCallback : function($this){
+                    
+                }
+            });
 		},
 		events: {//注意， 这里的events的this指针都不是dom本身了 ，而是这个View本身
 			'keypress #newTodo': 'createOnEnter',
@@ -59,7 +67,7 @@ $(document).ready(function($) {
 			console.log('add a todo');
 			console.log(todo);
 			var view = new TodoView({model: todo});
-			console.log(view.render().el);
+			//console.log(view.render().el);
 			$('#todoList').append(view.render().el);
 		},
 		toggleAll: function  () {
@@ -71,7 +79,6 @@ $(document).ready(function($) {
 	});
 
 	var TodoView = Backbone.View.extend({
-		el: null,
 		tagName: 'li',/*我去啊， 你要理解tagName和className的意思啊*/
 		className:'todo-item',
 		template: _.template($('#item-template').html()),
@@ -84,20 +91,18 @@ $(document).ready(function($) {
 			this.$el.html(this.template(this.model.toJSON()) );
 			//给该li加上一个class 为done
 			this.$el.toggleClass('done', this.model.get('done'));//是否加上done， 那得看done属性是否为true
-
-			$('input[type=checkbox]').m139Check({  
-                lblOtherClass : 'c-pointer',
-                lblStyle : 'position:absolute;',
-                initCallback : function($this){
-                    
-                }
-            });
-
+			this.input = this.$('.textEdit');
 			return this;//为什么return this， 链式调用啊
 		},
 		events: {
 			'click .toggleCheckbox': 'toggleDone',
 			'click a.destroy': 'clear',
+			'dblclick .todoText': 'edit'
+		},
+		edit: function() {
+			this.$el.addClass('editing');
+			//this.input.show();
+			this.input.focus();//为什么只要focus就可以了， 不需要show？
 		},
 		toggleDone: function  () {
 			this.model.toggle();
